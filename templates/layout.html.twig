@@ -12,13 +12,34 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li class="nav-item ">
+          <a class="nav-link" href="#">login</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+        <li class="nav-item ">
+          <a class="nav-link">register</a>
         </li>
       </ul>
+
+      {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ logout_path(key = null) }}">logout</a>
+        </li>
+      </ul>
+        
+      {% else %}
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item ">
+            <a class="nav-link" href="{{ path('app_login')}}">login</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ path('app_register')}}">register</a>
+        </li>
+      </ul>
+        
+      {% endif %}
     </div>
   </div>
 </nav>
