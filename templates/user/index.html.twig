@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block content %}
+<style>
+
+</style>
+
+{% for recipe in recipes %}
+
+    <h3>{{ recipe.title }}</h3>
+    
+{% endfor %}
+
+{% endblock %}
