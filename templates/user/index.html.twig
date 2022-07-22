@@ -11,7 +11,12 @@
 
 {% for recipe in recipes %}
 
-    <h3>{{ recipe.title }}</h3>
+    <div class="card" style="width: 18rem;">
+        <img src="{{ asset('card_directory/'~ recipe.cardPicture)}}" class="card-img-top" alt="...">
+  <div class="card-body">
+      <p class="card-text">{{ recipe.title }}</p>
+  </div>
+</div>
     
 {% endfor %}
 
